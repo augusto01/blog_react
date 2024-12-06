@@ -7,8 +7,7 @@ import { Rutas } from './routes/rutas'
 function App() {
   
   return (
-    <div>
-      <h1>Blog con React</h1>
+    <div className='layout'>
 
       <Rutas></Rutas>
     </div>

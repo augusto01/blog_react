@@ -5,10 +5,7 @@ export const Inicio = () => {
   return (
     <div>
         Inicio
-
         <Articulo></Articulo>
-    </div>
-
-    
+    </div>    
   )
 }
