@@ -7,6 +7,8 @@ import { Header } from "../components/layout/Header";
 import { Nav } from "../components/layout/Nav";
 import { SideBar } from "../components/layout/SideBar";
 import { Footer } from "../components/layout/Footer";
+import { Crear } from "../components/pages/Crear";
+import { Contacto } from "../components/pages/Contacto";
 
 export const Rutas = () => {
   return (
@@ -20,7 +22,9 @@ export const Rutas = () => {
             <Route path="/" element={<Navigate to="/inicio" />} />
             <Route path="/inicio" element={<Inicio />} />
             <Route path="/articulos" element={<Articulos />} />
-            <Route path="/articulo/:id" element={<Articulo />} /> {/* Ruta para Articulo */}
+            <Route path="/crear-articulos" element={<Crear />} />
+            <Route path="/contacto" element={<Contacto />} />
+            <Route path="/articulo/:id" element={<Articulo />} /> 
           </Routes>
         </section>
       <Footer/>

@@ -34,10 +34,15 @@ body{
   justify-content: center;
   
 }
-.header h1 {
+
+.header a {
   margin-left: 15px;
-  margin-top: 30px;
+  margin-top: 5px;
+  text-decoration: none; /* Elimina el subrayado */
+  color: inherit; /* Asegúrate de que el color del texto sea el mismo que el del contenedor */
 }
+
+
 /*BARRA DE NAVEGACION*/
 .nav{
   grid-area: nav;
@@ -79,6 +84,7 @@ body{
   flex-flow: row wrap;
   justify-content: flex-start;
   align-items: flex-start;
+  text-decoration: none;
   
 
 }
@@ -93,15 +99,57 @@ body{
   padding-bottom: 60px;
   padding-left: 25px;
   padding-right: 25px;
+  text-align: left;
+  display: flex;
+  max-height: 225px;
+}
+
+.articulo-item .mascara{
+  width: 20%;
+  height: 20%;
+  margin-right: 40px;
+}
+.articulo-item .mascara img{
+  width: 100%;
+  overflow: hidden;
+}
+
+.articulo-item h3{
+  width: 100%;
+}
+
+.jumbo{
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px  6px #ddd;
+  margin: 25px auto;
+  width: 85%;
+  padding: 55px;
+  padding-bottom: 75px;
+}
+
+.jumbo h1{
+  font-size: 30px;
+  color: #444;
+
+}
+
+.jumbo p {
+  display: block;
+  margin-bottom: 40px;
 }
 
 /*botones del item*/
 
-button, input[type = 'sumbit']
-      input[type = 'button']{
+.button,
+button,
+input[type = 'sumbit']
+input[type = 'button']{
           width: 100px;
           margin-top: 15px;
+          margin-right: 3px;
           text-transform: capitalize;
+          text-decoration: none;
           font-size: 16px;
           font-weight: 500;
           cursor: pointer;
@@ -112,6 +160,7 @@ button, input[type = 'sumbit']
           outline: none;
           padding: 15px;
           border-radius: 3px;
+          
       }
 
 .articulo-item .edit:hover{
@@ -131,6 +180,7 @@ button, input[type = 'sumbit']
   grid-area: lateral;
   background: #f6f7f9;
   border-left: 1px solid #ddd;
+  min-height: 400px;
 
 }
 
