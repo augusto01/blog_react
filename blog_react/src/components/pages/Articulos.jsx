@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState,useEffect } from 'react'
+import { Global } from '../../helpers/Global';
 export const Articulos = () => {
 
 
@@ -12,7 +13,7 @@ export const Articulos = () => {
   },[])
 
   const conseguirArticulos = async ()=>{
-    const url = 'http://localhost:3900/api/listar-articulos'
+    const url = Global.url_listar_articulos
     let peticion = await fetch(url,{
       method: 'GET'
     });
@@ -26,22 +27,25 @@ export const Articulos = () => {
 
   return (
     <>
-      {articulos.map (articulo => {
-        return(
-        <article key={articulo._id} className='articulo-item'>
-                  <div className='mascara'>
-                    <img src='https://imgs.search.brave.com/0pCT_BUqd7KYiJJxxcxYSmlhZugqhx8kgXY9UyMSUsU/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy80/LzQxL0NBQko3MC5w/bmc'></img>
-                  </div>
-                  <div className='datos'>
-                    <h3 className='titulo'>{articulo.titulo}</h3>
-                    <p className='description'>{articulo.contenido}</p>
-
-                    <button className='edit'>Editar</button>
-                    <button className='delete'>Borrar</button>
-                  </div>
-        </article>
-        ) 
-      })} 
+    {/*Validamos que haya almenos 1 elemento para recorrer el array de articulos */}
+      {articulos.length > 0 ?(
+                                articulos.map(articulo => (
+                                  <article key={articulo._id} className='articulo-item'>
+                                    <div className='mascara'>
+                                      <img src={articulo.imagen} alt={articulo.titulo} />
+                                    </div>
+                                    <div className='datos'>
+                                      <h3 className='titulo'>{articulo.titulo}</h3>
+                                      <p className='description'>{articulo.contenido}</p>
+                                      <button className='edit'>Editar</button>
+                                      <button className='delete'>Borrar</button>
+                                    </div>
+                                  </article>
+        ))
+      ) : (
+        <h1>No hay Artículos disponibles</h1>
+      )}
     </>
-  )
+  );
+  
 }
